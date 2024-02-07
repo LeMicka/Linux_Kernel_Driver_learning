@@ -46,7 +46,7 @@ static int __init moduleInit(void)
 	if (retval == 0)
 		printk("dev_nbrs - registered device number, major: %d, minor: %d\n", MYMAJOR, 0);
 	else if (retval > 0)
-		printk("dev_nbrs - registered devive number, major: %d, minor: %d\n", MAJOR(retval), retval&0xfffff);
+		printk("dev_nbrs - registered devive number, major: %d, minor: %d\n", retval<<20, retval&0xfffff);
 	else
 	{
 		printk("Could not register device number!\n");
